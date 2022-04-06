@@ -3,7 +3,7 @@
     <div class="cover">
       <div class="autoIconLayout">
         <div class="iconComponent" v-for="icon in iconList" v-bind:key="icon.sort" @click="showUrl">
-          <div class="icon"></div>
+          <div class="icon" :style="{backgroundImage:'url('+icon.icon+')'}"></div>
           <div class="iconName">
             <div class="iconText">{{ icon.title }}</div>
           </div>
@@ -33,9 +33,8 @@ export default {
     showUrl() {
       this.$api
           .post("/icon/list", {})
-          .then(function (response) {
-            this.iconList = response
-            console.log(this.iconList)
+          .then((response) => {
+            this.iconList = response.data
           })
           .catch(function (error) {
             console.log(error)
