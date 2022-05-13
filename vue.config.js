@@ -95,7 +95,7 @@ module.exports = {
         // 更常用和更有针对性的写法如下
         proxy: {
             '/api': {
-                target: 'http://192.168.2.25:8080/',
+                target: 'http://192.168.2.24:8080/',
                 changeOrigin: true,  //允许跨域
                 pathRewrite: {
                     /* 重写路径，当我们在浏览器中看到请求的地址为：http://localhost:8080/api/core/getData/userInfo 时
@@ -120,5 +120,5 @@ module.exports = {
     // ESLint 可以通过 .eslintrc 或 package.json 中的 eslintConfig 字段来配置。
     // TypeScript 可以通过 tsconfig.json 来配置。
     // Default: 'default' 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码。这个值会在 @vue/cli-plugin-eslint 被安装之后生效。可以是条件语句
-    lintOnSave: 'error'
+    lintOnSave: false
 }
