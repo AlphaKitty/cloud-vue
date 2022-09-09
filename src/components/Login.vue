@@ -16,19 +16,22 @@
 </template>
 
 <script>
+
 export default {
   name: "login",
   data() {
     return {
       loginData: {
         name: "张友谅",
-        password: "123"
+        password: "123456"
       },
       dialogFormVisible: false
     }
   },
   methods: {
     login() {
+      let url = {"url": "NullPointer"}
+      console.log(window.byted_acrawler.sign(url))
       this.$api
           .post("/login", this.loginData)
           .then((response) => {

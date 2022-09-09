@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="cover">
-      <mac></mac>
+      <Login></Login>
       <div class="leftBar"></div>
       <div class="autoIconLayout">
-        <div class="iconComponent" v-for="icon in iconList" v-bind:key="icon.sort">
+        <div class="iconComponent" v-for="icon in iconList" v-bind:key="icon.sort" @click="openUrl(icon.url)">
           <div class="icon" :style="{backgroundImage:'url('+icon.icon+')'}"></div>
           <div class="iconName">
             <div class="iconText">{{ icon.title }}</div>
@@ -37,15 +37,27 @@ export default {
   },
   mounted() {
     this.$api
-        .post("/icon/listDefault", {})
+        .post("/icon/list", {})
         .then((response) => {
           this.iconList = response.data.data
+          if (response.data.message === '需要登录') {
+            this.$api
+                .post("/icon/listDefault", {})
+          }
         })
         .catch(function (error) {
           console.log(error)
         });
   },
-  methods: {}
+  methods: {
+    openUrl(url) {
+      window.open(url, "_blank");
+      //_blank : 在新窗口打开
+      //_self : 在当前窗口打开
+
+      //window.location.href = url : 当前页面重定向
+    },
+  }
 }
 </script>
 
