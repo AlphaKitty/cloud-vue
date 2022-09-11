@@ -95,7 +95,7 @@ module.exports = {
         // 更常用和更有针对性的写法如下
         proxy: {
             '/api': {
-                target: 'http://192.168.2.14:8080/',
+                target: 'http://101.42.231.254:8080/',
                 changeOrigin: true,  //允许跨域
                 pathRewrite: {
                     /* 重写路径，当我们在浏览器中看到请求的地址为：http://localhost:8080/api/core/getData/userInfo 时
