@@ -61,6 +61,23 @@ module.exports = {
     //             // 修改它的选项...
     //             return options
     //         })
+    //     //发布模式
+    //     config.when(process.env.NODE_EVN === 'production', config => {
+    //         config.entry('app').clear().add('./src/main-prod.js') //生成环境的打包入口
+    //
+    //         //设置不被打包的依赖包（依赖包的变量名要与导入时的相同）
+    //         config.set('externals', {
+    //             vue: 'Vue',
+    //             axios: 'axios',
+    //             echarts: 'echarts',
+    //             nprogress: 'NProgress',
+    //         })
+    //     })
+    //
+    //     //开发模式
+    //     config.when(process.env.NODE_EVN === 'development', config => {
+    //         config.entry('app').clear().add('./src/main-dev.js') //开发环境的打包入口
+    //     })
     // },
     css: {
         // 已弃用
@@ -116,7 +133,7 @@ module.exports = {
             // 插件可以作为 `options.pluginOptions.foo` 访问这些选项。
         }
     },
-    // Babel 可以通过新建 babel.config.js 进行配置 待更多了解
+    // Babel 可以通过新建 babel.index.js 进行配置 待更多了解
     // ESLint 可以通过 .eslintrc 或 package.json 中的 eslintConfig 字段来配置。
     // TypeScript 可以通过 tsconfig.json 来配置。
     // Default: 'default' 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码。这个值会在 @vue/cli-plugin-eslint 被安装之后生效。可以是条件语句

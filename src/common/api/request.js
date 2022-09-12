@@ -6,7 +6,7 @@ import {Notification} from 'element-ui';
 /**
  * 【指定 axios的 baseURL】
  * 如果手工指定 baseURL: '/api'
- * 则映射后端域名，通过 vue.config.js
+ * 则映射后端域名，通过 vue.index.js
  * @type {*|string}
  */
 // 设置全局请求路径前缀
